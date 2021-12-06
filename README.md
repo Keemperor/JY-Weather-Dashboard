@@ -12,7 +12,7 @@ Additionally you can see the forecast for the next five days.
 
 ### Web page image
 
-![image](assets\images\JY-Weather-Dashboard.jpg)
+![Weather Dashboard](assets\images\JY-Weather-Dashboard.jpg)
 
 ### Webpage link
 
