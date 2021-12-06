@@ -47,13 +47,13 @@ function initPage() {
                       
                       // When UV Index is good, shows green, when ok shows yellow, when bad shows red
                       if (response.data[0].value < 4 ) {
-                          UVIndex.setAttribute("class", "badge badge-success");
+                          UVIndex.setAttribute("class", "badge bg-success");
                       }
                       else if (response.data[0].value < 8) {
-                          UVIndex.setAttribute("class", "badge badge-warning");
+                          UVIndex.setAttribute("class", "badge bg-warning");
                       }
                       else {
-                          UVIndex.setAttribute("class", "badge badge-danger");
+                          UVIndex.setAttribute("class", "badge bg-danger");
                       }
                       console.log(response.data[0].value)
                       UVIndex.innerHTML = response.data[0].value;
@@ -90,6 +90,9 @@ function initPage() {
                           const forecastTempEl = document.createElement("p");
                           forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
                           forecastEls[i].append(forecastTempEl);
+                          const forecastWindEl = document.createElement("p");
+                          forecastWindEl.innerHTML = "Wind: " + (response.data.list[forecastIndex].wind.speed) + " MPH";
+                          forecastEls[i].append(forecastWindEl);
                           const forecastHumidityEl = document.createElement("p");
                           forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
                           forecastEls[i].append(forecastHumidityEl);
@@ -124,7 +127,7 @@ function initPage() {
           const historyItem = document.createElement("input");
           historyItem.setAttribute("type", "text");
           historyItem.setAttribute("readonly", true);
-          historyItem.setAttribute("class", "form-control d-block bg-white");
+          historyItem.setAttribute("class", "form-control d-block mt-1 mb-2 bg-secondary text-center");
           historyItem.setAttribute("value", searchHistory[i]);
           historyItem.addEventListener("click", function () {
               getWeather(historyItem.value);

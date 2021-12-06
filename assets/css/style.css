@@ -1,3 +1,9 @@
 header {
   background-image: linear-gradient(to right, rgba(46, 203, 255, 1), rgba(0, 52, 240, 1));
 }
+
+
+
+.card-bg {
+  background-color: #2e3f61;
+}
